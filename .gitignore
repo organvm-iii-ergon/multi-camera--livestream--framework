@@ -1,0 +1,23 @@
+# Generated files
+software/generated/
+
+# Temporary/metadata files
+_gemini_*.json
+
+# OS files
+.DS_Store
+._*
+
+# Editor files
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+
+# Test outputs
+tests/logs/*.log
+
+# Temporary files
+*.tmp
+*.bak

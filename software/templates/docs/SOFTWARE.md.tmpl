@@ -1,0 +1,141 @@
+# Software Installation & Configuration
+
+> Version-pinned software installation guide for the Dope's Show live streaming pipeline.
+
+**Generated from profile:** {{CONFIG_PROFILE_NAME}}
+**Last Updated:** {{GENERATED_DATE}}
+**Version:** {{CONFIG_PROFILE_VERSION}}
+
+---
+
+## Table of Contents
+
+1. [Overview](#overview)
+2. [System Requirements](#system-requirements)
+3. [Version Pinning](#version-pinning)
+4. [Installation Guide](#installation-guide)
+5. [Configuration Files](#configuration-files)
+6. [Updates & Maintenance](#updates--maintenance)
+
+---
+
+## Overview
+
+This document provides the definitive software installation guide for the Dope's Show pipeline. All software versions are **pinned** for reproducibility—do not upgrade without testing in a non-production environment.
+
+### Software Stack
+
+| Category | Software | Version | Purpose |
+|----------|----------|---------|---------|
+| Video Mixing | {{CONFIG_SOFTWARE_REQUIRED_VIDEO_MIXER_NAME}} | {{CONFIG_SOFTWARE_REQUIRED_VIDEO_MIXER_VERSION}} | Main production switcher |
+| Audio Mixing | {{CONFIG_SOFTWARE_REQUIRED_DAW_APP_NAME}} | {{CONFIG_SOFTWARE_REQUIRED_DAW_APP_VERSION}} | DAW, Dante clock master |
+| Audio Network | {{CONFIG_SOFTWARE_REQUIRED_AUDIO_ROUTING_NAME}} | {{CONFIG_SOFTWARE_REQUIRED_AUDIO_ROUTING_VERSION}} | Dante routing |
+| Video Capture | Desktop Video | {{CONFIG_HARDWARE_VIDEO_CAPTURE_DRIVER_VERSION}} | DeckLink drivers |
+| Audio Interface | {{CONFIG_HARDWARE_AUDIO_INTERFACE_VENDOR}} Drivers | {{CONFIG_HARDWARE_AUDIO_INTERFACE_DRIVER_VERSION}} | {{CONFIG_HARDWARE_AUDIO_INTERFACE_MODEL}} support |
+| Graphics | {{CONFIG_SOFTWARE_OPTIONAL_GRAPHICS_NAME}} (optional) | - | Real-time graphics |
+
+---
+
+## System Requirements
+
+### Hardware Requirements
+
+| Component | Current Setup |
+|-----------|---------------|
+| Computer | {{CONFIG_HARDWARE_COMPUTER_MODEL}} |
+| Chip | {{CONFIG_HARDWARE_COMPUTER_CHIP}} |
+| RAM | {{CONFIG_HARDWARE_COMPUTER_RAM_GB}}GB |
+| Video Capture | {{CONFIG_HARDWARE_VIDEO_CAPTURE_VENDOR}} {{CONFIG_HARDWARE_VIDEO_CAPTURE_MODEL}} |
+| Audio Interface | {{CONFIG_HARDWARE_AUDIO_INTERFACE_VENDOR}} {{CONFIG_HARDWARE_AUDIO_INTERFACE_MODEL}} |
+| Thunderbolt Chassis | {{CONFIG_HARDWARE_VIDEO_CAPTURE_ENCLOSURE_MODEL}} |
+
+### macOS Requirements
+
+| Requirement | Version |
+|-------------|---------|
+| macOS | {{CONFIG_SYSTEM_REQUIRED_OS_MAJOR}}.0+ ({{CONFIG_SYSTEM_REQUIRED_OS_NAME}}) |
+| Current OS | {{CONFIG_HARDWARE_COMPUTER_OS_VERSION}} ({{CONFIG_HARDWARE_COMPUTER_OS_NAME}}) |
+
+> ⚠️ Do not upgrade macOS without verifying driver compatibility.
+
+---
+
+## Version Pinning
+
+### Current Pinned Versions
+
+These versions are tested and known to work together:
+
+| Software | Version | Bundle ID |
+|----------|---------|-----------|
+| macOS | {{CONFIG_HARDWARE_COMPUTER_OS_VERSION}} | - |
+| {{CONFIG_SOFTWARE_REQUIRED_VIDEO_MIXER_NAME}} | {{CONFIG_SOFTWARE_REQUIRED_VIDEO_MIXER_VERSION}} | `{{CONFIG_SOFTWARE_REQUIRED_VIDEO_MIXER_BUNDLE_ID}}` |
+| {{CONFIG_SOFTWARE_REQUIRED_DAW_APP_NAME}} | {{CONFIG_SOFTWARE_REQUIRED_DAW_APP_VERSION}} | `{{CONFIG_SOFTWARE_REQUIRED_DAW_APP_BUNDLE_ID}}` |
+| {{CONFIG_SOFTWARE_REQUIRED_AUDIO_ROUTING_NAME}} | {{CONFIG_SOFTWARE_REQUIRED_AUDIO_ROUTING_VERSION}} | `{{CONFIG_SOFTWARE_REQUIRED_AUDIO_ROUTING_BUNDLE_ID}}` |
+| Desktop Video (DeckLink) | {{CONFIG_HARDWARE_VIDEO_CAPTURE_DRIVER_VERSION}} | - |
+| {{CONFIG_HARDWARE_AUDIO_INTERFACE_VENDOR}} Drivers | {{CONFIG_HARDWARE_AUDIO_INTERFACE_DRIVER_VERSION}} | - |
+
+---
+
+## Installation Guide
+
+### 1. macOS Preparation
+
+```bash
+# Check current macOS version
+sw_vers -productVersion
+# Expected: {{CONFIG_HARDWARE_COMPUTER_OS_VERSION}} or compatible
+
+# Verify Apple Silicon
+uname -m
+# Expected: {{CONFIG_SYSTEM_REQUIRED_ARCH}}
+```
+
+### 2. Install Required Applications
+
+1. **{{CONFIG_SOFTWARE_REQUIRED_VIDEO_MIXER_NAME}}** v{{CONFIG_SOFTWARE_REQUIRED_VIDEO_MIXER_VERSION}}
+   - Role: {{CONFIG_SOFTWARE_REQUIRED_VIDEO_MIXER_ROLE}}
+   - Download from official source
+
+2. **{{CONFIG_SOFTWARE_REQUIRED_DAW_APP_NAME}}** v{{CONFIG_SOFTWARE_REQUIRED_DAW_APP_VERSION}}
+   - Role: {{CONFIG_SOFTWARE_REQUIRED_DAW_APP_ROLE}}
+   - Download from official source
+
+3. **{{CONFIG_SOFTWARE_REQUIRED_AUDIO_ROUTING_NAME}}** v{{CONFIG_SOFTWARE_REQUIRED_AUDIO_ROUTING_VERSION}}
+   - Role: {{CONFIG_SOFTWARE_REQUIRED_AUDIO_ROUTING_ROLE}}
+   - Download from Audinate
+
+### 3. Install Hardware Drivers
+
+1. **{{CONFIG_HARDWARE_VIDEO_CAPTURE_VENDOR}} Desktop Video** v{{CONFIG_HARDWARE_VIDEO_CAPTURE_DRIVER_VERSION}}
+   - For {{CONFIG_HARDWARE_VIDEO_CAPTURE_MODEL}}
+   - Architecture: {{CONFIG_HARDWARE_VIDEO_CAPTURE_DRIVER_ARCH}}
+
+2. **{{CONFIG_HARDWARE_AUDIO_INTERFACE_VENDOR}} Drivers** v{{CONFIG_HARDWARE_AUDIO_INTERFACE_DRIVER_VERSION}}
+   - For {{CONFIG_HARDWARE_AUDIO_INTERFACE_MODEL}}
+
+---
+
+## Configuration Files
+
+Configuration is managed via the profile system. Current profile: **{{CONFIG_PROFILE_NAME}}**
+
+```bash
+# View current configuration
+cat software/generated/config.sh
+
+# Switch profiles
+./software/scripts/generate-config.sh [profile_name]
+```
+
+---
+
+## Updates & Maintenance
+
+Before updating any software:
+
+1. Test in non-production environment
+2. Verify all drivers are compatible
+3. Update the profile YAML if versions change
+4. Regenerate config: `./software/scripts/generate-config.sh`
+5. Regenerate docs: `make docs`

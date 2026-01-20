@@ -1,0 +1,13 @@
+1.0.0
+
+# Format: MAJOR.MINOR.PATCH
+# MAJOR: Breaking changes (incompatible hardware/software)
+# MINOR: New features, new supported hardware
+# PATCH: Documentation updates, bug fixes
+
+# Associated metadata (store alongside):
+RELEASE_DATE=2025-01-22
+TESTED_MACOS=14.2.1
+TESTED_HARDWARE=M1_Ultra,DeckLink_Quad_HDMI,MOTU_8PRE_ES
+STATUS=production_ready
+MAINTAINER=Your Name

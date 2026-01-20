@@ -1,0 +1,22 @@
+Item,Quantity,Part Number,Vendor,Unit Cost,Total Cost,Status,Notes
+M1 Mac Studio,1,MUNH3LL/A,Apple,$5999,$5999,In Stock,"20-core CPU, 64-core GPU, 128GB RAM"
+DeckLink Quad HDMI,1,BMDKG-DKQD,Blackmagic Design,$1500,$1500,In Stock,"Requires Echo Express enclosure"
+Echo Express SE I,1,SONNET-6501-TB3,Sonnet Technologies,$800,$800,In Stock,"Thunderbolt 3 PCIe enclosure"
+MOTU 8PRE-ES,1,710000064060,MOTU,$3500,$3500,In Stock,"Dante-enabled audio interface"
+Dante Managed Switch,1,CISCO-9300-48T,Cisco,$2000,$2000,In Stock,"10 Gbps uplink, RSTP redundancy"
+Dante AVIO USB,2,DANTE-AVIO-USB,Audinate,$500,$1000,In Stock,"Audio converter, USB host"
+HDMI 2.1 Cable,4,BELKIN-HDMI21,Belkin,$50,$200,In Stock,"Support 4K60, 48Gbps"
+Thunderbolt 3 Cable,2,OWC-TB3-2M,OWC,$50,$100,In Stock,"2m, certified"
+Ethernet Cat6A,5,MOLEX-CAT6A-100,Molex,$20,$100,In Stock,"100ft spool, shielded"
+XLR Microphone Cable,8,HOSA-XLR-PRO,Hosa,$15,$120,In Stock,"25ft, balanced"
+Power Strip (PDU),2,TRIPPLITE-PDU,Tripp Lite,$300,$600,In Stock,"8-outlet, surge protection"
+Studio Monitors,2,YAMAHA-HS8,$600,$1200,In Stock,"Powered near-field monitors"
+Headphones (closed-back),1,SONY-MDR7506,$200,$200,In Stock,"For monitoring, no spillage"
+HDMI Splitter (1x4),2,BLACKMAGIC-HDMI-SPLITTER,$150,$300,In Stock,"For monitor preview + capture"
+Desktop Microphone,1,RODE-PROCASTER,$299,$299,In Stock,"Dynamic XLR, broadcast-quality"
+Microphone Boom Arm,1,YELLOW-BOOM-ARM,$50,$50,In Stock,"Desk-mounted, cable management"
+XLR-USB Preamp,1,BEHRINGER-U-PHORIA,$100,$100,In Stock,"Fallback for USB audio capture"
+Network UPS,1,APC-SMT2200,$2000,$2000,In Stock,"2200VA, 5-min runtime"
+SUBTOTAL,,,,,$18769.00
+TAX (8%),,,,,$1501.52
+TOTAL,,,,,$20270.52

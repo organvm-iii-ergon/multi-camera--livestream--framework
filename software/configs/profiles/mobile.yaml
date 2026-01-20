@@ -1,0 +1,100 @@
+# mobile.yaml - Portable streaming configuration
+#
+# Simplified setup for mobile/field streaming with a MacBook Pro
+# and USB capture devices. Demonstrates profile flexibility.
+
+profile:
+  name: "mobile"
+  description: "Portable MacBook Pro streaming setup"
+  version: "1.0.0"
+
+hardware:
+  computer:
+    category: "laptop"
+    model: "MacBook Pro"
+    chip: "M3 Pro"
+    ram_gb: 36
+    os_version: "14.2.1"
+    os_name: "Sonoma"
+
+  video_capture:
+    category: "usb_capture"
+    vendor: "Elgato"
+    model: "Cam Link 4K"
+    inputs: 2
+    max_resolution: "2160p30"
+    detection_patterns:
+      - "elgato"
+      - "cam link"
+    # No enclosure needed for USB devices
+    enclosure: null
+
+  audio_interface:
+    category: "usb_interface"
+    vendor: "Focusrite"
+    model: "Scarlett 2i2"
+    driver_version: "built-in"
+    dante_enabled: false
+    channels_in: 2
+    channels_out: 2
+    detection_patterns:
+      - "focusrite"
+      - "scarlett"
+    preference_pane_paths: []
+
+  network:
+    primary_interface: "en0"
+
+software:
+  required:
+    daw_app:
+      category: "audio_mixer"
+      name: "Ableton Live"
+      bundle_id: "com.ableton.live"
+      version: "12.0.10"
+      process_names:
+        - "Ableton Live"
+        - "Live"
+      launch_order: 2
+
+    video_mixer:
+      category: "streaming_switcher"
+      name: "OBS Studio"
+      bundle_id: "com.obsproject.obs-studio"
+      version: "29.1.3"
+      process_names:
+        - "OBS"
+        - "obs"
+      launch_order: 3
+
+  optional:
+    graphics:
+      category: "3d_graphics"
+      name: "Blender"
+      bundle_id: "org.blenderfoundation.blender"
+      process_names:
+        - "Blender"
+
+# Mobile setup uses lower thresholds due to limited resources
+thresholds:
+  min_disk_space_gb: 30
+  min_memory_free_percent: 15
+  max_cpu_usage_percent: 80
+
+timing:
+  launch_delay_seconds: 2
+  quit_timeout_seconds: 8
+
+streaming:
+  primary:
+    platform: "YouTube"
+    rtmp_endpoint: "a.rtmp.youtube.com"
+
+notes:
+  pre_stream: |
+    1. Connect USB-C hub with capture devices
+    2. Verify WiFi/Ethernet connection
+    3. Run health-check.sh
+  post_stream: |
+    1. Stop streaming
+    2. Disconnect safely

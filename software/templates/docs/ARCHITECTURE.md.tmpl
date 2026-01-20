@@ -1,0 +1,134 @@
+# System Architecture
+
+**Generated from profile:** {{CONFIG_PROFILE_NAME}}
+**Last Updated:** {{GENERATED_DATE}}
+
+## High-Level Overview
+
+This pipeline ingests 4K video from DSLR/mirrorless cameras, synchronizes audio via Dante network, enables low-latency NDI caller integration, and outputs to streaming platforms (YouTube, Twitch) via OBS.
+
+**Design principle**: Separation of concerns — capture, sync, mixing, output are independent subsystems connected via standardized protocols (HDMI, Dante, NDI, RTMP).
+
+## Signal Flow Diagram
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│ INPUT LAYER                                                 │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  Cameras (HDMI)              Cameras (Audio)                │
+│  ├─ [Camera 1]               ├─ USB or XLR                 │
+│  ├─ [Camera 2]               └─ Dante converters           │
+│  ├─ [Camera 3]                                              │
+│  └─ [Camera 4]               Callers (Remote)              │
+│       ↓                        └─ NDI OBS stream           │
+│  {{CONFIG_HARDWARE_VIDEO_CAPTURE_MODEL}}                    │
+│  ({{CONFIG_HARDWARE_VIDEO_CAPTURE_ENCLOSURE_MODEL}})        │
+│       ↓                                                     │
+│                                                             │
+├─────────────────────────────────────────────────────────────┤
+│ CAPTURE LAYER ({{CONFIG_HARDWARE_COMPUTER_MODEL}})          │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  {{CONFIG_SOFTWARE_REQUIRED_VIDEO_MIXER_NAME}}              │
+│  ├─ Scene 1: Camera quad (4K mosaic)                       │
+│  ├─ Scene 2: Single camera + caller                        │
+│  ├─ Scene 3: Screen share (graphics)                       │
+│  └─ Audio Input: {{CONFIG_HARDWARE_AUDIO_INTERFACE_VENDOR}} │
+│                  {{CONFIG_HARDWARE_AUDIO_INTERFACE_MODEL}}  │
+│                                                             │
+│  Dante Network (audio sync)                                │
+│  ├─ {{CONFIG_HARDWARE_AUDIO_INTERFACE_MODEL}} (Dante I/O)  │
+│  ├─ Dante AVIO nodes (camera audio converters)             │
+│  └─ Sample clock: 48 kHz (broadcast standard)              │
+│                                                             │
+├─────────────────────────────────────────────────────────────┤
+│ PROCESSING LAYER                                            │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  {{CONFIG_SOFTWARE_REQUIRED_DAW_APP_NAME}} (audio mixing)   │
+│  ├─ Input: Camera feeds (via Dante)                        │
+│  ├─ Master clock: Drives all Dante devices                 │
+│  └─ Output: Master mix → Audio Interface → OBS             │
+│                                                             │
+│  {{CONFIG_SOFTWARE_OPTIONAL_GRAPHICS_NAME}} (optional)      │
+│  ├─ Input: Generative parameters (MIDI from DAW)          │
+│  └─ Output: Screen share → OBS                             │
+│                                                             │
+├─────────────────────────────────────────────────────────────┤
+│ OUTPUT / ENCODING LAYER                                     │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  OBS Encoder (H.264 or H.265)                              │
+│  ├─ Video bitrate: 8–25 Mbps (codec-dependent)             │
+│  ├─ Resolution: 4K or 1080p mosaic                         │
+│  └─ Framerate: 30fps or 60fps                              │
+│       ↓                                                      │
+│  RTMP Output (streaming protocol)                          │
+│       ↓                                                      │
+├─────────────────────────────────────────────────────────────┤
+│ DISTRIBUTION LAYER                                          │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  Streaming Platforms:                                       │
+│  ├─ {{CONFIG_STREAMING_PRIMARY_PLATFORM}}                   │
+│  └─ {{CONFIG_STREAMING_BACKUP_PLATFORM}}                    │
+│                                                             │
+│  Archive & Analytics:                                       │
+│  ├─ Local recording (OBS → H.264 file)                     │
+│  └─ Optional: Cloud backup of raw recordings               │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+```
+
+## Key Components
+
+### 1. Capture Subsystem (HDMI + Video Capture)
+
+- **{{CONFIG_HARDWARE_VIDEO_CAPTURE_MODEL}}**: {{CONFIG_HARDWARE_VIDEO_CAPTURE_INPUTS}}× HDMI input, outputs to PCIe
+- **{{CONFIG_HARDWARE_VIDEO_CAPTURE_ENCLOSURE_MODEL}}**: {{CONFIG_HARDWARE_VIDEO_CAPTURE_ENCLOSURE_INTERFACE}} enclosure, PCIe slot for capture card
+- **Protocol**: Uncompressed HDMI or HDCP-encrypted video
+- **Latency**: <1ms (hardware-based capture)
+- **Bandwidth**: ~1.5 Gbps per 4K30 stream
+
+### 2. Audio Synchronization (Dante)
+
+**Why Dante?**
+- All audio sources share a **global sample clock**
+- Avoids drift between video and audio
+- Supports flexible routing without hardware reconfiguration
+- Industry standard for broadcast
+
+**Components**:
+- **Dante Network**: Dedicated managed Ethernet switch
+- **{{CONFIG_HARDWARE_AUDIO_INTERFACE_MODEL}}**: {{CONFIG_HARDWARE_AUDIO_INTERFACE_CHANNELS_IN}} in / {{CONFIG_HARDWARE_AUDIO_INTERFACE_CHANNELS_OUT}} out channels
+- **{{CONFIG_SOFTWARE_REQUIRED_DAW_APP_NAME}}**: Acts as Dante clock master
+
+### 3. Computer System
+
+| Specification | Value |
+|--------------|-------|
+| Model | {{CONFIG_HARDWARE_COMPUTER_MODEL}} |
+| Chip | {{CONFIG_HARDWARE_COMPUTER_CHIP}} |
+| RAM | {{CONFIG_HARDWARE_COMPUTER_RAM_GB}} GB |
+| OS | {{CONFIG_HARDWARE_COMPUTER_OS_NAME}} {{CONFIG_HARDWARE_COMPUTER_OS_VERSION}} |
+
+### 4. Network Configuration
+
+| Interface | Purpose |
+|-----------|---------|
+| {{CONFIG_HARDWARE_NETWORK_PRIMARY_INTERFACE}} | Primary network (streaming) |
+| Dante Network | Dedicated audio network |
+
+## Operational Thresholds
+
+| Parameter | Value |
+|-----------|-------|
+| Minimum Disk Space | {{CONFIG_THRESHOLDS_MIN_DISK_SPACE_GB}} GB |
+| Recommended Disk Space | {{CONFIG_THRESHOLDS_RECOMMENDED_DISK_SPACE_GB}} GB |
+| Max CPU Usage | {{CONFIG_THRESHOLDS_MAX_CPU_USAGE_PERCENT}}% |
+| Min Memory Free | {{CONFIG_THRESHOLDS_MIN_MEMORY_FREE_PERCENT}}% |
+
+---
+
+*This document was generated from profile: **{{CONFIG_PROFILE_NAME}}***
