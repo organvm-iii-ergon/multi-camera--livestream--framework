@@ -2,7 +2,7 @@
 
 > Common questions about the Multi-Camera Livestream Framework.
 
-**Last Updated:** <!-- TODO: Update date -->
+**Last Updated:** 2025-01-20
 **Version:** 1.0.0
 
 ---
@@ -296,6 +296,70 @@ This framework was created to provide a reproducible, well-documented approach t
 ### Can I hire someone to set this up for me?
 
 <!-- TODO: Add consultant/integrator recommendations if applicable -->
+
+---
+
+## Comparisons
+
+### How is this different from ATEM Mini?
+
+**ATEM is hardware-first. This framework is documentation-first.**
+
+ATEM Mini is an excellent hardware switcher for simple setups under $1,000. This framework provides the knowledge layer for more complex deployments—Dante audio sync, operational runbooks, reproducible configurations.
+
+Choose ATEM for: 2–4 cameras, simple audio, quick setup, appliance approach.
+Choose this framework for: Dante infrastructure, volunteer operations, research reproducibility.
+
+See [COMPARISON.md](COMPARISON.md#vs-atem-mini--atem-switchers) for detailed comparison.
+
+### How is this different from vMix?
+
+**vMix is Windows software. This framework is macOS ecosystem documentation.**
+
+vMix is a powerful Windows-only application with built-in graphics, replay, and PTZ control. This framework is macOS-native with Dante audio networking and modular components.
+
+Choose vMix for: Windows environment, built-in instant replay, excellent PTZ control.
+Choose this framework for: macOS, Dante infrastructure, research context.
+
+See [COMPARISON.md](COMPARISON.md#vs-vmix) for detailed comparison.
+
+### Why would I use this instead of just OBS?
+
+**OBS is the video mixer. This framework is everything else.**
+
+OBS handles video composition, encoding, and streaming. This framework adds:
+- Hardware selection guidance (tested BOM)
+- Audio sync architecture (Dante)
+- Operational runbooks (8-phase checklist)
+- Pre-stream health checks (scripts)
+- Troubleshooting decision trees
+- Reproducibility documentation (version locking)
+
+See [COMPARISON.md](COMPARISON.md#vs-obs-alone) for detailed comparison.
+
+### Why is open-source documentation important?
+
+Open documentation provides:
+
+1. **Reproducibility** — Citeable configurations for research
+2. **Knowledge transfer** — Survives personnel changes
+3. **Community evolution** — Shared best practices improve everyone
+4. **Volunteer operations** — Runbooks reduce training time
+
+Commercial products update without notice and documentation disappears. This framework version-locks everything.
+
+See [COMPARISON.md](COMPARISON.md#why-open-documentation-matters) for full discussion.
+
+### What budget profiles are available?
+
+| Profile | Budget | Best For |
+|---------|--------|----------|
+| **Budget** | ~$3K | Worship, education, simple setups |
+| **Mobile** | ~$8K | Touring, portable production |
+| **Studio** | ~$20K | Research, corporate, full-featured |
+| **Broadcast** | $50K+ | Esports, enterprise, multi-room |
+
+See [USE-CASES.md](USE-CASES.md) for how each profile fits different scenarios.
 
 ---
 
