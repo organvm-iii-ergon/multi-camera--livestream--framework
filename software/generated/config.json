@@ -1,0 +1,193 @@
+{
+  "profile": {
+    "version": "1.0.0",
+    "schema_version": "1",
+    "name": "studio",
+    "description": "Primary M1 Mac Studio multi-camera 4K streaming setup"
+  },
+  "system": {
+    "required_os_major": 13,
+    "required_os_name": "Ventura",
+    "required_arch": "arm64"
+  },
+  "thresholds": {
+    "min_disk_space_gb": 50,
+    "recommended_disk_space_gb": 100,
+    "min_memory_free_percent": 20,
+    "max_cpu_usage_percent": 70,
+    "min_memory_free_mb": 4000,
+    "recommended_memory_free_mb": 8000
+  },
+  "timing": {
+    "launch_delay_seconds": 3,
+    "quit_timeout_seconds": 10,
+    "health_check_wait_seconds": 30
+  },
+  "config_dirs": [
+    "software/configs/obs",
+    "software/configs/ableton",
+    "software/configs/dante",
+    "software/configs/blender",
+    "software/configs/network"
+  ],
+  "hardware": {
+    "computer": {
+      "category": "workstation",
+      "model": "Mac Studio",
+      "chip": "M1 Ultra",
+      "ram_gb": 128,
+      "os_version": "14.2.1",
+      "os_name": "Sonoma"
+    },
+    "video_capture": {
+      "category": "pcie_capture",
+      "vendor": "Blackmagic Design",
+      "model": "DeckLink Quad HDMI",
+      "driver_version": "13.2",
+      "driver_arch": "arm64",
+      "inputs": 4,
+      "max_resolution": "2160p30",
+      "detection_patterns": [
+        "decklink",
+        "blackmagic"
+      ],
+      "enclosure": {
+        "vendor": "Sonnet",
+        "model": "Echo Express SE I",
+        "interface": "Thunderbolt 3",
+        "detection_patterns": [
+          "echo",
+          "sonnet"
+        ]
+      }
+    },
+    "audio_interface": {
+      "category": "dante_interface",
+      "vendor": "MOTU",
+      "model": "8PRE-ES",
+      "driver_version": "2.23.5",
+      "dante_enabled": true,
+      "channels_in": 24,
+      "channels_out": 28,
+      "sample_rates": [
+        44100,
+        48000,
+        88200,
+        96000
+      ],
+      "detection_patterns": [
+        "motu"
+      ],
+      "preference_pane_paths": [
+        "/Library/PreferencePanes/MOTU Audio.prefPane",
+        "$HOME/Library/PreferencePanes/MOTU Audio.prefPane"
+      ]
+    },
+    "network": {
+      "dante_switch": {
+        "model": "Dedicated Gigabit Switch",
+        "ports": 8,
+        "notes": "Isolated Dante network recommended"
+      },
+      "primary_interface": "en0"
+    }
+  },
+  "software": {
+    "required": {
+      "daw_app": {
+        "category": "audio_mixer",
+        "name": "Ableton Live",
+        "bundle_id": "com.ableton.live",
+        "version": "12.0.10",
+        "process_names": [
+          "Ableton Live",
+          "Live",
+          "Ableton"
+        ],
+        "role": "Audio mixing, Dante clock master",
+        "launch_order": 3
+      },
+      "video_mixer": {
+        "category": "streaming_switcher",
+        "name": "OBS Studio",
+        "bundle_id": "com.obsproject.obs-studio",
+        "version": "29.1.3",
+        "process_names": [
+          "OBS",
+          "obs"
+        ],
+        "role": "Video mixing, encoding, streaming",
+        "launch_order": 4
+      },
+      "audio_routing": {
+        "category": "dante_controller",
+        "name": "Dante Controller",
+        "bundle_id": "com.audinate.dante.DanteController",
+        "version": "4.5.3",
+        "process_names": [
+          "Dante",
+          "DanteController"
+        ],
+        "role": "Audio network routing and monitoring",
+        "launch_order": 1
+      }
+    },
+    "optional": {
+      "dante_virtual_soundcard": {
+        "category": "virtual_audio",
+        "name": "Dante Virtual Soundcard",
+        "bundle_id": "com.audinate.dante.DVS",
+        "process_names": [
+          "DVS"
+        ],
+        "role": "Software-based Dante endpoints"
+      },
+      "device_manager": {
+        "category": "device_discovery",
+        "name": "MOTU Discovery",
+        "bundle_id": "com.motu.MOTUDiscovery",
+        "process_names": [
+          "MOTU",
+          "MOTUDiscovery"
+        ],
+        "role": "MOTU device management",
+        "launch_order": 2
+      },
+      "graphics": {
+        "category": "3d_graphics",
+        "name": "Blender",
+        "bundle_id": "org.blenderfoundation.blender",
+        "process_names": [
+          "Blender",
+          "blender"
+        ],
+        "role": "Real-time graphics overlay"
+      }
+    }
+  },
+  "streaming": {
+    "primary": {
+      "platform": "YouTube",
+      "rtmp_endpoint": "a.rtmp.youtube.com",
+      "backup_endpoint": "b.rtmp.youtube.com"
+    },
+    "backup": {
+      "platform": "Twitch",
+      "rtmp_endpoint": "live.twitch.tv"
+    }
+  },
+  "notes": {
+    "pre_stream": "1. Power on MOTU 8PRE-ES first (Dante clock master)\n2. Power on Echo Express chassis\n3. Verify all HDMI sources connected\n4. Run health-check.sh\n",
+    "post_stream": "1. Stop streaming in OBS\n2. Save Ableton project\n3. Run shutdown-studio.sh\n4. Power off hardware in reverse order\n",
+    "hardware_shutdown_order": [
+      "Cameras",
+      "MOTU 8PRE-ES",
+      "Echo Express Chassis",
+      "Mac Studio (optional)"
+    ]
+  },
+  "_generated": {
+    "profile": "studio",
+    "timestamp": "2026-01-20T12:29:49Z"
+  }
+}
