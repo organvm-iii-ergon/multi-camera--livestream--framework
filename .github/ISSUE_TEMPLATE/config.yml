@@ -1,8 +1,8 @@
 blank_issues_enabled: false
 contact_links:
   - name: Documentation
-    url: https://github.com/YOUR_ORG/dopes-show--the/tree/main/docs
+    url: https://github.com/4444J99/multi-camera--livestream--framework/tree/main/docs
     about: Check our documentation before opening an issue
   - name: Troubleshooting Guide
-    url: https://github.com/YOUR_ORG/dopes-show--the/blob/main/docs/TROUBLESHOOTING.md
+    url: https://github.com/4444J99/multi-camera--livestream--framework/blob/main/docs/TROUBLESHOOTING.md
     about: Common issues and solutions

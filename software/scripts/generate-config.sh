@@ -16,7 +16,7 @@
 # Requirements:
 #   - yq (YAML processor): brew install yq
 #
-# Author: Dope's Show Pipeline
+# Author: Multi-Camera Livestream Framework
 # Version: 1.0.0
 
 set -euo pipefail
@@ -352,7 +352,7 @@ main() {
 
     echo ""
     echo -e "${BOLD}╔═══════════════════════════════════════════════════════════════╗${NC}"
-    echo -e "${BOLD}║     DOPE'S SHOW - CONFIG GENERATOR                            ║${NC}"
+    echo -e "${BOLD}║     MULTI-CAMERA LIVESTREAM FRAMEWORK - CONFIG GENERATOR      ║${NC}"
     echo -e "${BOLD}╚═══════════════════════════════════════════════════════════════╝${NC}"
     echo ""
 

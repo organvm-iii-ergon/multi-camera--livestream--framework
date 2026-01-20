@@ -1,6 +1,6 @@
 # Audio & Dante Network Configuration
 
-> Comprehensive guide for setting up and troubleshooting the Dante audio network in the Dope's Show live streaming pipeline.
+> Comprehensive guide for setting up and troubleshooting the Dante audio network in the Multi-Camera Livestream Framework.
 
 **Last Updated:** <!-- TODO: Update date -->
 **Version:** 1.0.0
@@ -22,7 +22,7 @@
 
 ## Overview
 
-The Dope's Show pipeline uses **Dante audio networking** for low-latency, high-quality audio transport from the MOTU 8PRE-ES interface to the Mac Studio running Ableton Live.
+The Multi-Camera Livestream Framework uses **Dante audio networking** for low-latency, high-quality audio transport from the MOTU 8PRE-ES interface to the Mac Studio running Ableton Live.
 
 ### Key Components
 
@@ -301,4 +301,4 @@ Recommended tracks:
 
 ---
 
-*Document maintained by Dope's Show Pipeline team*
+*Document maintained by Multi-Camera Livestream Framework team*

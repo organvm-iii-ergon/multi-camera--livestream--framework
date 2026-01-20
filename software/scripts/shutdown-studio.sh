@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# shutdown-studio.sh - Gracefully shutdown all streaming applications
+# shutdown-studio.sh - Gracefully shutdown all Multi-Camera Livestream Framework applications
 #
 # This script gracefully quits all streaming applications in the correct
 # order to prevent data loss and ensure clean shutdown.
@@ -16,7 +16,7 @@
 #   4. MOTU Discovery
 #   5. Dante Controller
 #
-# Author: Dope's Show Pipeline
+# Author: Multi-Camera Livestream Framework
 # Version: 1.0.0
 
 set -euo pipefail
@@ -340,7 +340,7 @@ confirm_shutdown() {
 
     echo ""
     echo -e "${BOLD}╔═══════════════════════════════════════════════════════════════╗${NC}"
-    echo -e "${BOLD}║     DOPE'S SHOW - SHUTDOWN STUDIO                             ║${NC}"
+    echo -e "${BOLD}║     MULTI-CAMERA LIVESTREAM FRAMEWORK - SHUTDOWN STUDIO       ║${NC}"
     echo -e "${BOLD}╚═══════════════════════════════════════════════════════════════╝${NC}"
     echo ""
 

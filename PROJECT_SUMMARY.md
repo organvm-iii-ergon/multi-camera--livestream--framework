@@ -30,7 +30,7 @@ Total Content: ~25,000+ words of professional documentation
 ## Complete File Structure
 
 ```
-dopes-show--the/
+multi-camera--livestream--framework/
 │
 ├─ README.md ✅                          [Project overview, quick start, key features]
 ├─ VERSION ✅                            [Semantic versioning: 1.0.0]

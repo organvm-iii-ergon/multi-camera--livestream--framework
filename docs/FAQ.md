@@ -1,6 +1,6 @@
 # Frequently Asked Questions
 
-> Common questions about the Dope's Show live streaming pipeline.
+> Common questions about the Multi-Camera Livestream Framework.
 
 **Last Updated:** <!-- TODO: Update date -->
 **Version:** 1.0.0
@@ -11,7 +11,7 @@
 
 ### What is this project?
 
-Dope's Show is a documentation and tooling framework for building a professional multi-camera 4K live streaming setup. It provides:
+Multi-Camera Livestream Framework is a documentation and tooling framework for building a professional multi-camera 4K live streaming setup. It provides:
 
 - Hardware specifications and compatibility testing
 - Software configuration guides
@@ -285,9 +285,9 @@ Yes! The documentation is provided as-is. You're responsible for:
 
 ## Miscellaneous
 
-### Why "Dope's Show"?
+### Why this framework?
 
-<!-- TODO: Add your project naming backstory -->
+This framework was created to provide a reproducible, well-documented approach to multi-camera live streaming. It captures the knowledge and lessons learned from building professional streaming setups.
 
 ### Is there a Discord/community?
 
@@ -307,4 +307,4 @@ Yes! The documentation is provided as-is. You're responsible for:
 
 ---
 
-*Document maintained by Dope's Show Pipeline team*
+*Document maintained by Multi-Camera Livestream Framework team*

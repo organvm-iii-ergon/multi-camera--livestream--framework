@@ -1,6 +1,6 @@
 # Camera Settings Guide
 
-> Per-camera configuration for the Dope's Show live streaming pipeline.
+> Per-camera configuration for the Multi-Camera Livestream Framework.
 
 **Last Updated:** <!-- TODO: Update date -->
 **Version:** 1.0.0
@@ -343,4 +343,4 @@ For recordings that need color correction:
 
 ---
 
-*Document maintained by Dope's Show Pipeline team*
+*Document maintained by Multi-Camera Livestream Framework team*

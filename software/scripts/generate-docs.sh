@@ -13,7 +13,7 @@
 #   - Generated config (run generate-config.sh first)
 #   - envsubst (from gettext): brew install gettext
 #
-# Author: Dope's Show Pipeline
+# Author: Multi-Camera Livestream Framework
 # Version: 1.0.0
 
 set -euo pipefail
@@ -193,7 +193,7 @@ main() {
 
     echo ""
     echo -e "${BOLD}╔═══════════════════════════════════════════════════════════════╗${NC}"
-    echo -e "${BOLD}║     DOPE'S SHOW - DOCUMENTATION GENERATOR                     ║${NC}"
+    echo -e "${BOLD}║     MULTI-CAMERA LIVESTREAM FRAMEWORK - DOCS GENERATOR        ║${NC}"
     echo -e "${BOLD}╚═══════════════════════════════════════════════════════════════╝${NC}"
     echo ""
 

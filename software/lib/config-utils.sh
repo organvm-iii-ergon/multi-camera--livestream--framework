@@ -14,7 +14,7 @@
 #   CONFIG_HARDWARE_COMPUTER_MODEL="Mac Studio"
 #   CONFIG_THRESHOLDS_MIN_DISK_SPACE_GB="50"
 #
-# Author: Dope's Show Pipeline
+# Author: Multi-Camera Livestream Framework
 # Version: 1.0.0
 
 # Prevent multiple sourcing

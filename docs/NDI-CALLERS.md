@@ -1,6 +1,6 @@
 # NDI Remote Callers Guide
 
-> Configuration guide for integrating remote participants via NDI into the Dope's Show live streaming pipeline.
+> Configuration guide for integrating remote participants via NDI into the Multi-Camera Livestream Framework.
 
 **Last Updated:** <!-- TODO: Update date -->
 **Version:** 1.0.0
@@ -377,4 +377,4 @@ Let me know if you have questions!
 
 ---
 
-*Document maintained by Dope's Show Pipeline team*
+*Document maintained by Multi-Camera Livestream Framework team*

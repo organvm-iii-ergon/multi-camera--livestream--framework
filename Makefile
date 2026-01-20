@@ -1,4 +1,4 @@
-# Makefile - Build automation for Dope's Show configuration system
+# Makefile - Build automation for Multi-Camera Livestream Framework
 #
 # Usage:
 #   make config           Generate config from default profile (studio)
@@ -92,7 +92,7 @@ setup: config
 
 # Show help
 help:
-	@echo "Dope's Show - Configuration System"
+	@echo "Multi-Camera Livestream Framework - Configuration System"
 	@echo ""
 	@echo "Usage:"
 	@echo "  make config              Generate config (default: studio profile)"

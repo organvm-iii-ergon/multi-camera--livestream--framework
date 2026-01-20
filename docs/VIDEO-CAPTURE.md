@@ -1,6 +1,6 @@
 # Video Capture Configuration
 
-> Setup guide for the Blackmagic DeckLink Quad HDMI capture system in the Dope's Show live streaming pipeline.
+> Setup guide for the Blackmagic DeckLink Quad HDMI capture system in the Multi-Camera Livestream Framework.
 
 **Last Updated:** <!-- TODO: Update date -->
 **Version:** 1.0.0
@@ -181,7 +181,7 @@ For consistent multi-camera production:
 ### Scene Setup
 
 ```
-Scene Collection: "Dope's Show Main"
+Scene Collection: "Livestream-Main"
 ├── Scene: Full Screen
 │   └── CAM1-Wide (full canvas)
 ├── Scene: Host Close-up
@@ -331,4 +331,4 @@ system_profiler SPCameraDataType
 
 ---
 
-*Document maintained by Dope's Show Pipeline team*
+*Document maintained by Multi-Camera Livestream Framework team*

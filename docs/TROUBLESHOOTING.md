@@ -1,6 +1,6 @@
 # Troubleshooting Guide
 
-> Decision-tree format troubleshooting for common issues in the Dope's Show live streaming pipeline.
+> Decision-tree format troubleshooting for common issues in the Multi-Camera Livestream Framework.
 
 **Last Updated:** <!-- TODO: Update date -->
 **Version:** 1.0.0
@@ -476,4 +476,4 @@ Location: `~/Library/Logs/DiagnosticReports/`
 
 ---
 
-*Document maintained by Dope's Show Pipeline team*
+*Document maintained by Multi-Camera Livestream Framework team*

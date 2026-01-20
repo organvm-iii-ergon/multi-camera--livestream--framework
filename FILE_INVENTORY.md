@@ -156,7 +156,7 @@ open docs/RUNBOOK.md
 ## 📁 Directory Structure
 
 ```
-dopes-show--the/
+multi-camera--livestream--framework/
 ├── README.md
 ├── CLAUDE.md
 ├── VERSION

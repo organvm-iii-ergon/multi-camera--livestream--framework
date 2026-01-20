@@ -1,6 +1,6 @@
 # Software Installation & Configuration
 
-> Version-pinned software installation guide for the Dope's Show live streaming pipeline.
+> Version-pinned software installation guide for the Multi-Camera Livestream Framework.
 
 **Last Updated:** <!-- TODO: Update date -->
 **Version:** 1.0.0
@@ -20,7 +20,7 @@
 
 ## Overview
 
-This document provides the definitive software installation guide for the Dope's Show pipeline. All software versions are **pinned** for reproducibility—do not upgrade without testing in a non-production environment.
+This document provides the definitive software installation guide for the Multi-Camera Livestream Framework. All software versions are **pinned** for reproducibility—do not upgrade without testing in a non-production environment.
 
 ### Software Stack
 
@@ -204,14 +204,14 @@ software/configs/
 ├── obs/
 │   ├── basic/
 │   │   ├── profiles/
-│   │   │   └── DopeShow/
+│   │   │   └── Livestream/
 │   │   │       └── basic.ini
 │   │   └── scenes/
-│   │       └── DopeShow.json
+│   │       └── Livestream.json
 │   └── plugin_config/
 ├── ableton/
 │   └── templates/
-│       └── DopeShow-Template.als
+│       └── Livestream-Template.als
 ├── dante/
 │   └── routing-preset.xml
 └── blender/
@@ -335,4 +335,4 @@ ls /Library/PreferencePanes/ | grep -i motu
 
 ---
 
-*Document maintained by Dope's Show Pipeline team*
+*Document maintained by Multi-Camera Livestream Framework team*

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# launch-studio.sh - Launch all streaming applications for Dope's Show
+# launch-studio.sh - Launch all streaming applications for Multi-Camera Livestream Framework
 #
 # This script launches all required applications in the correct order
 # with appropriate delays to avoid race conditions.
@@ -16,7 +16,7 @@
 #   4. OBS Studio (video mixing, streaming)
 #   5. Optionally: Blender (graphics)
 #
-# Author: Dope's Show Pipeline
+# Author: Multi-Camera Livestream Framework
 # Version: 1.0.0
 
 set -euo pipefail
@@ -382,7 +382,7 @@ print_next_steps() {
 main() {
     echo ""
     echo -e "${BOLD}╔═══════════════════════════════════════════════════════════════╗${NC}"
-    echo -e "${BOLD}║     DOPE'S SHOW - LAUNCH STUDIO                               ║${NC}"
+    echo -e "${BOLD}║     MULTI-CAMERA LIVESTREAM FRAMEWORK - LAUNCH STUDIO         ║${NC}"
     echo -e "${BOLD}╚═══════════════════════════════════════════════════════════════╝${NC}"
     echo ""
     echo "Time: $(date '+%Y-%m-%d %H:%M:%S')"

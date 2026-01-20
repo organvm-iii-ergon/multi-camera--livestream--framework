@@ -21,7 +21,7 @@
 
 ## Overview
 
-The Dope's Show pipeline outputs via RTMP to live streaming platforms. Primary platform is **YouTube Live**, with optional simulcast to **Twitch**.
+The Multi-Camera Livestream Framework outputs via RTMP to live streaming platforms. Primary platform is **YouTube Live**, with optional simulcast to **Twitch**.
 
 ### Stream Specifications
 
@@ -416,4 +416,4 @@ Before going live:
 
 ---
 
-*Document maintained by Dope's Show Pipeline team*
+*Document maintained by Multi-Camera Livestream Framework team*

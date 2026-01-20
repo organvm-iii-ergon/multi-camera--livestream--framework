@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# setup-macos.sh - Setup verification for Dope's Show live streaming pipeline
+# setup-macos.sh - Setup verification for Multi-Camera Livestream Framework
 #
 # This script checks that all required software and hardware is properly
 # installed and configured for the multi-camera 4K live streaming setup.
@@ -12,7 +12,7 @@
 #   - macOS 13.0+ (Ventura or later)
 #   - M1 Mac Studio recommended (works on other Apple Silicon)
 #
-# Author: Dope's Show Pipeline
+# Author: Multi-Camera Livestream Framework
 # Version: 1.0.0
 
 set -euo pipefail
@@ -436,7 +436,7 @@ print_summary() {
 
 main() {
     echo ""
-    echo -e "${BOLD}Dope's Show - Live Streaming Pipeline Setup${NC}"
+    echo -e "${BOLD}Multi-Camera Livestream Framework - Setup${NC}"
     echo -e "Version 1.0.0 | $(date '+%Y-%m-%d %H:%M:%S')"
 
     if [[ "$CONFIG_LOADED" == "true" ]]; then

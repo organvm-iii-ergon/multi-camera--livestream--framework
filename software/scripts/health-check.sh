@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# health-check.sh - Pre-stream health check for Dope's Show pipeline
+# health-check.sh - Pre-stream health check for Multi-Camera Livestream Framework
 #
 # Run this script 30-45 minutes before going live to verify all
 # hardware and software is functioning correctly.
@@ -14,7 +14,7 @@
 #   1 - Critical failures detected
 #   2 - Warnings detected but can proceed
 #
-# Author: Dope's Show Pipeline
+# Author: Multi-Camera Livestream Framework
 # Version: 1.0.0
 
 set -euo pipefail
@@ -492,7 +492,7 @@ print_summary() {
 main() {
     if ! $JSON_OUTPUT; then
         echo ""
-        echo -e "${BOLD}Dope's Show - Pre-Stream Health Check${NC}"
+        echo -e "${BOLD}Multi-Camera Livestream Framework - Pre-Stream Health Check${NC}"
         echo -e "$(date '+%Y-%m-%d %H:%M:%S')"
         if [[ "$CONFIG_LOADED" == "true" ]]; then
             echo -e "Profile: ${BLUE}${CONFIG_PROFILE_NAME:-unknown}${NC}"
