@@ -1,0 +1,6 @@
+title: "Multi-Camera Livestream Framework"
+description: "4K multi-camera livestream pipeline documentation"
+theme: minima
+include:
+  - docs
+  - README.md
